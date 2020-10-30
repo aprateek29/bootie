@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .admin import UserCreationForm, UserChangeForm
+from django.contrib.auth import logout, authenticate, login
 
 def signup_view(request):
     if request.method == 'POST':
@@ -9,3 +10,7 @@ def signup_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form':form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
