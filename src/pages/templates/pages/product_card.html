@@ -1,0 +1,24 @@
+{% load static %}
+<div class="custom_product_card">
+
+    <div class="custom_product_card_header">
+        Product Name
+    </div>
+    
+    <div class="custom_product_card_image">
+        <img src="{% static 'pages/img/card.png' %}" width="100%" height="100%" alt="">
+    </div>
+    
+    <div class="custom_product_card_footer">
+        Rs. 1000
+        <span>Rating</span>
+            <div class="btn-group dropleft">
+                <span class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </span>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">add to cart</a>
+                </div>
+              </div>          
+    </div>
+
+</div>

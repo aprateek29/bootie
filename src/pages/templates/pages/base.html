@@ -11,12 +11,13 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href="{% static 'pages/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/card.css' %}">
 </head>
 <body>
 
     {% include 'pages/navbar.html' %}
 
-    <div class="container-fluid">
+    <div>
         {% block content%}
         {% endblock content%}
     </div>
