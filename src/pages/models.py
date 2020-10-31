@@ -22,6 +22,16 @@ class Tag(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
+    email = models.EmailField(max_length=255)
     phone = models.CharField(max_length=10, blank=True, null=True)
-    message = models.CharField(max_length=250, blank=True, null=True)
+    message = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.email
+
+
+class Newsletter(models.Model):
+    email = models.EmailField(max_length=255)
+
+    def __str__(self):
+        return self.email

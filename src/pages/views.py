@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product, Contact
+from .models import Product, Contact, Newsletter
 from django.contrib import messages
 
 
@@ -26,6 +26,17 @@ def contact_view(request):
         return redirect('/')
 
     return render(request, 'pages/contact.html', { 'heading': 'Contact Us'})
+
+def newsletter_view(request):
+    if request.method == 'POST':
+        email = request.POST['Email']
+        obj = Newsletter.objects.create(email=email)
+        obj.save()
+        messages.success(request, 'Request Sent.')
+        return redirect('/')
+
+    return render(request, 'pages/contact.html', { 'heading': 'Contact Us'})
+
 
 def single_view(request):
     return render(request, 'pages/single.html', { 'heading': 'Blog'})
