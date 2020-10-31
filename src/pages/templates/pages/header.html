@@ -13,20 +13,12 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mt-2">
-                        <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'index' %}">Home</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
                         <li><a href="{% url 'blog' %}">Blog</a></li>
-                        <li>
-                            <!-- First Tier Drop Down -->
-                            <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="#">Drop Down <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-2" />
-                            <ul>
-                                <li><a href="{% url 'blog' %}">Blog</a></li>
-                                <li><a href="shop.html">Shop Now</a></li>
-                                <li><a href="shop-single.html">Single Page</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="shop.html">Shop Now</a></li>
+                        <li><a href="shop-single.html">Single Page</a></li>        
                         <li><a href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </nav>

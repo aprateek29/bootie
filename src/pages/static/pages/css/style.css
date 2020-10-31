@@ -159,20 +159,13 @@ nav ul li {
 }
 
 
-.menu li ul li a {
-    color: #555;
-    padding: 10px 10px;
-    font-size: 0.8em;
-}
-
-
-.menu li ul li:hover {
-    background: #f8f9fa;
-}
-
 /* Background color change on Hover */
 
 nav .menu li a:hover {
+    color: #ff4c4c;
+}
+
+nav .menu li a:active {
     color: #ff4c4c;
 }
 
