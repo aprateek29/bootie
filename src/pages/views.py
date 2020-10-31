@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from .models import Product
+from django.shortcuts import render, redirect
+from .models import Product, Contact
+from django.contrib import messages
+
 
 # Create your views here.
 def index_view(request):
@@ -13,6 +15,16 @@ def blog_view(request):
     return render(request, 'pages/blog.html', { 'heading': 'Blog Page'})
 
 def contact_view(request):
+    if request.method == 'POST':
+        name = request.POST['Name']
+        email = request.POST['Email']
+        phone = request.POST['Phone']
+        message = request.POST['Message']
+        obj = Contact.objects.create(name=name, email=email, phone=phone, message=message)
+        obj.save()
+        messages.success(request, 'Request Sent.')
+        return redirect('/')
+
     return render(request, 'pages/contact.html', { 'heading': 'Contact Us'})
 
 def single_view(request):

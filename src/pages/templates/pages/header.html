@@ -24,6 +24,14 @@
             </div>
         </header>
         <!-- //header -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li style="font-family: 'Lato', sans-serif; background-color: #007bff; letter-spacing: 2px; font-weight: 400; text-transform: uppercase; margin: 0 auto; width: fit-content; list-style: none; padding: 5px 10px; color: #fff; box-shadow: 0 4px 8px #333, 4px 0 8px #007bff;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
 
         <!--/banner-->
         <div class="banner-info">

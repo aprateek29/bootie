@@ -17,11 +17,12 @@
             <h3 class="tittle text-center"><span class="sub-tittle">Find Us</span> Contact Us</h3>
             <div class="row contact-main-info mt-5">
                 <div class="col-md-6 contact-right-content">
-                    <form action="#" method="post">
-                        <input type="text" name="Name" placeholder="Name" required="">
-                        <input type="email" class="email" name="Email" placeholder="Email" required="">
-                        <input type="text" name="Phone no" placeholder="Phone" required="">
-                        <textarea name="Message" placeholder="Message" required=""></textarea>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="text" name="Name" placeholder="Name" required="required">
+                        <input type="email" class="email" name="Email" placeholder="Email" required="required">
+                        <input type="text" name="Phone" placeholder="Phone">
+                        <textarea name="Message" placeholder="Message"></textarea>
                         <div class="read mt-3">
                             <input type="submit" value="Submit">
                         </div>
