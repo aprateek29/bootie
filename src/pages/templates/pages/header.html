@@ -1,3 +1,4 @@
+{% load active_link_tags %}
 
     <!-- mian-content -->
     <div class="main-banner" id="home">
@@ -13,13 +14,12 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mt-2">
-                        <li><a href="{% url 'index' %}">Home</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'blog' %}">Blog</a></li>
-                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'index' %}" class="{% active_link 'index' strict=True %}">Home</a></li>
+                        <li><a href="{% url 'about' %}" class="{% active_link 'about' %}">About</a></li>
+                        <li><a href="{% url 'blog' %}" class="{% active_link 'blog' %}">Blog</a></li>
                         <li><a href="shop.html">Shop Now</a></li>
                         <li><a href="shop-single.html">Single Page</a></li>        
-                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'contact' %}" class="{% active_link 'contact' %}">Contact</a></li>
                     </ul>
                 </nav>
                 <!-- //nav -->
