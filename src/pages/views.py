@@ -9,3 +9,6 @@ def about_view(request):
 
 def blog_view(request):
     return render(request, 'pages/blog.html', {})
+
+def contact_view(request):
+    return render(request, 'pages/contact.html', {})
