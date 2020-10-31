@@ -16,9 +16,7 @@
                     <ul class="menu mt-2">
                         <li><a href="{% url 'index' %}" class="{% active_link 'index' strict=True %}">Home</a></li>
                         <li><a href="{% url 'about' %}" class="{% active_link 'about' %}">About</a></li>
-                        <li><a href="{% url 'blog' %}" class="{% active_link 'blog' %}">Blog</a></li>
-                        <li><a href="shop.html">Shop Now</a></li>
-                        <li><a href="shop-single.html">Single Page</a></li>        
+                        <li><a href="{% url 'shop' %}">Shop Now</a></li>
                         <li><a href="{% url 'contact' %}" class="{% active_link 'contact' %}">Contact</a></li>
                     </ul>
                 </nav>
@@ -29,12 +27,16 @@
 
         <!--/banner-->
         <div class="banner-info">
+            {% if trending %}
             <p>Trending of the week</p>
-            <h3 class="mb-4">Casual Shoes for Men</h3>
+            {% endif %}
+            <h3 class="mb-4">{{heading}}</h3>
+            {% if btn %}
             <div class="ban-buttons">
-                <a href="shop-single.html" class="btn">Shop Now</a>
-                <a href="single.html" class="btn active">Read More</a>
+                <a href="{% url 'shop' %}" class="btn">Shop Now</a>
+                <a href="{% url 'about' %}" class="btn active">Read More</a>
             </div>
+            {% endif %}
         </div>
         <!--// banner-inner -->
 

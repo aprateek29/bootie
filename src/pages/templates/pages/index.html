@@ -64,7 +64,7 @@
                         </div>
                         <div class="item-info-product">
                             <h4>
-                                <a href="shop-single.html">{{product.name|title}}</a>
+                                <a href="{% url 'shop-detail' product.id %}">{{product.name|title}}</a>
                             </h4>
 
                             <div class="product_price">
