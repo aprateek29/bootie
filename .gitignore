@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+Include/
 Scripts/
 *.cfg
 build/
@@ -135,8 +136,8 @@ dmypy.json
 *.pot
 *.pyc
 __pycache__
-db.sqlite3
-media
+# db.sqlite3
+# media
 
 # Backup files # 
 *.bak 
