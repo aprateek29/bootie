@@ -1444,3 +1444,9 @@ a.move-top span {
 }
 
 /*--//responsive--*/
+@media only screen and (max-width: 600px) {
+    .deal-leftmk {
+      display: none;
+    }
+  }
+  

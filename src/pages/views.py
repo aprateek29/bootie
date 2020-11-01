@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Product, Contact, Newsletter
 from django.contrib import messages
+from .filters import ProductFilter
 
 
 # Create your views here.
@@ -42,7 +43,10 @@ def single_view(request):
     return render(request, 'pages/single.html', { 'heading': 'Blog'})
 
 def shop_list_view(request):
-    return render(request, 'pages/shop.html', { 'heading': 'Shop'})
+    filter = ProductFilter(request.GET, queryset=Product.objects.all())
+    print(filter)
+    return render(request, 'pages/shop.html', {'filter': filter, 'heading':'Shop'})
+    # return render(request, 'pages/shop.html', {'heading': 'Shop'})
 
 def shop_detail_view(request, id):
     return render(request, 'pages/shop-single.html', { 'heading': 'Product Page', 'btn':True})

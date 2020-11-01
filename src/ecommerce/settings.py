@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'active_link',
+    'django_filters',
 
     # my apps
     'accounts',
