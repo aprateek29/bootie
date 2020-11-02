@@ -1,17 +1,48 @@
-{% extends 'pages/base.html' %}
-{% load crispy_forms_tags %}
-{% load socialaccount %}
+{% extends 'accounts/base.html' %}
 {% load static %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container">
 
-    <form method="post">
-        {% csrf_token %}
-        {{form|crispy}}
-        <input type="submit" value="Sign Up">
-    </form>
-    
-    <a href="{% provider_login_url 'google' %}">Login with Google</a>
-</div>
-{% endblock content %}
+<section class="ab-info-main py-5">
+    <div class="container py-3">
+        <h3 class="tittle text-center"><span class="sub-tittle"></span> Sign Up</h3>
+        <div class="row contact-main-info mt-5">
+            <div class="col-md-6 contact-right-content">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="Username" required="required">
+                    <input type="email" name="email" placeholder="Email" required="required">
+                    <input type="password" class="email" name="password1" placeholder="Password" required="required">
+                    <input type="password" class="email" name="password2" placeholder="Password" required="required">
+                    <div class="read mt-3">
+                        <input type="submit" value="Sign Up">
+                    </div>
+                </form>
+                <br>
+                <a style="color: black;
+                font-size: 17px;
+                letter-spacing: 1px;
+                padding: 14px 0;
+                border: transparent;
+                -webkit-transition: 0.5s all;
+                -moz-transition: 0.5s all;
+                transition: 0.5s all;
+                background: #fff;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 0;
+                padding: 0.7em 2em;
+                padding-left: 1em;
+                padding-bottom: .8em;
+                box-shadow: 0 4px 8px #eee, 4px 0 8px #eee;" href="{% provider_login_url 'google' %}">
+                <img src="{% static 'pages/images/google.png' %}" width="25px" height="25px" alt="">
+                &nbsp;Sign in with Google</a> 
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %} 
