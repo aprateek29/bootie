@@ -20,6 +20,7 @@ def signup_view(request):
 
 def logout_view(request):
     logout(request)
+    messages.info(request, f"Logged Out")
     return redirect('/')
 
 def login_view(request):

@@ -1004,7 +1004,7 @@ h2.logo-2 a {
     letter-spacing: 1px;
 }
 /*--contact--*/
-.contact-right-content input[type="text"], .contact-right-content input[type="email"],.contact-right-content input[type="tel"], .contact-right-content textarea {
+.contact-right-content input[type="text"], .contact-right-content input[type="email"], .contact-right-content input[type="password"], .contact-right-content input[type="tel"], .contact-right-content textarea {
     padding: 0.8em 1em;
     color: #495057;
     border: none;
