@@ -43,14 +43,16 @@ def single_view(request):
     return render(request, 'pages/single.html', { 'heading': 'Blog'})
 
 def shop_list_view(request):
+    product_list = Product.objects.all()[:5]
     filter = ProductFilter(request.GET, queryset=Product.objects.all())
     print(filter)
-    return render(request, 'pages/shop.html', {'filter': filter, 'heading':'Shop'})
+    return render(request, 'pages/shop.html', {'filter': filter, 'heading':'Shop', 'product_list': product_list})
     # return render(request, 'pages/shop.html', {'heading': 'Shop'})
 
 def shop_detail_view(request, id):
     product = Product.objects.get(id=id)
-    return render(request, 'pages/shop-single.html', { 'product':product,'heading': 'Product Page', 'btn':True})
+    product_list = Product.objects.all()[:5]
+    return render(request, 'pages/shop-single.html', { 'product':product,'heading': 'Product Page', 'btn':True, 'product_list': product_list})
 
 def checkout(request):
     return render(request, 'pages/checkout.html', {})

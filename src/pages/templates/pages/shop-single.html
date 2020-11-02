@@ -4,7 +4,7 @@
 <!---->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
+            <a href="{% url 'index' %}">Home</a>
         </li>
         <li class="breadcrumb-item active">Shop Single</li>
     </ol>
@@ -17,62 +17,7 @@
                 <!-- product left -->
                 <div class="side-bar col-lg-4">
 
-                    <!-- deals -->
-                    <div class="deal-leftmk left-side">
-                        <h3 class="sear-head">Special Deals</h3>
-                        <div class="special-sec1 row mb-3">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'pages/images/s4.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-4">
-                                <h3>Shuberry Heels</h3>
-                                <a href="#">Rs.180.00</a>
-                            </div>
-
-                        </div>
-                        <div class="special-sec1 row">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'pages/images/s2.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>Chikku Loafers</h3>
-                                <a href="#">Rs.99.00</a>
-                            </div>
-
-                        </div>
-                        <div class="special-sec1 row my-3">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'pages/images/s1.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>Bella Toes</h3>
-                                <a href="#">Rs.165.00</a>
-                            </div>
-
-                        </div>
-                        <div class="special-sec1 row">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'pages/images/s5.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>Red Bellies</h3>
-                                <a href="#">Rs.225.00</a>
-                            </div>
-
-                        </div>
-                        <div class="special-sec1 row mt-3">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'pages/images/s3.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>(SRV) Sneakers</h3>
-                                <a href="#">Rs.169.00</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- //deals -->
-
+                    {% include 'pages/special-deals.html' %}
                 </div>
                 <!-- //product left -->
                 <!-- product right -->
@@ -83,7 +28,7 @@
                         </div>
                         <div class="desc1-right col-md-6 pl-lg-4">
                             <h3>{{product.name}}</h3>
-                            <h5>Rs. {{product.price}} <span>{{product.price|add:200}}</span></h5>
+                            <h5>Rs  {{product.price}} <span>{{product.price|add:200}}</span></h5>
                             <div class="available mt-3">
                                     <a href="{% url 'checkout' %}" class="btn1">Buy Now</a>
                                 <p style="padding-top: 10px;">Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
@@ -136,12 +81,12 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="#">Suitable Lace Up </a>
+                                        <a href="{% url 'shop-detail' 10 %}">Suitable Lace Up </a>
                                     </h4>
 
                                     <div class="product_price">
                                         <div class="grid-price">
-                                            <span class="money">Rs.675.00</span>
+                                            <span class="money">Rs 675.00</span>
                                         </div>
                                     </div>
                                     <ul class="stars">
@@ -162,12 +107,12 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="#">Black Flats</a>
+                                        <a href="{% url 'shop-detail' 11 %}">Black Flats</a>
                                     </h4>
 
                                     <div class="product_price">
                                         <div class="grid-price">
-                                            <span class="money">Rs.475.00</span>
+                                            <span class="money">Rs 475.00</span>
                                         </div>
                                     </div>
                                     <ul class="stars">
@@ -188,12 +133,12 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="#">Elevator Shoes </a>
+                                        <a href="{% url 'shop-detail' 12 %}">Elevator Shoes </a>
                                     </h4>
 
                                     <div class="product_price">
                                         <div class="grid-price">
-                                            <span class="money">Rs.575.00</span>
+                                            <span class="money">Rs 575.00</span>
                                         </div>
                                     </div>
                                     <ul class="stars">
