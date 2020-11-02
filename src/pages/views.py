@@ -51,3 +51,6 @@ def shop_list_view(request):
 def shop_detail_view(request, id):
     product = Product.objects.get(id=id)
     return render(request, 'pages/shop-single.html', { 'product':product,'heading': 'Product Page', 'btn':True})
+
+def checkout(request):
+    return render(request, 'pages/checkout.html', {})

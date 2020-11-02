@@ -977,6 +977,24 @@ form.w3layouts-newsletter {
     border-radius: 0;
     padding: 0.7em 2em;
 }
+a.btn1 {
+    color: #ff4c4c!important;
+    font-size: 17px;
+    letter-spacing: 1px;
+    padding: 14px 0;
+    border: transparent;
+    text-transform: uppercase;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    transition: 0.5s all;
+    background: #1e272e;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0;
+    padding: 0.7em 2em;
+    margin-bottom: 2.5em;
+
+}
 
 h2.logo-2 a {
     font-weight: 700;

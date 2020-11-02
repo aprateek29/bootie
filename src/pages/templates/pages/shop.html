@@ -20,7 +20,7 @@
                     <div class="search-bar w3layouts-newsletter">
                         <h3 class="sear-head">Search Here..</h3>
                         <form action="" method="GET" class="d-flex">
-                            <button class="btn1">Apply Filters</button>
+                        <button class="btn1">Apply Filters</button>
                         <input type="search" placeholder="Product name..." name="name" class="form-control">
                     </div>
                     <!--preference -->
@@ -83,7 +83,7 @@
                             </div>
                             <div class="img-deal1 col-md-4">
                                 <h3>Shuberry Heels</h3>
-                                <a href="shop-single.html">$180.00</a>
+                                <a href="#">Rs 180.00</a>
                             </div>
 
                         </div>
@@ -93,7 +93,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>Chikku Loafers</h3>
-                                <a href="shop-single.html">$99.00</a>
+                                <a href="#">Rs 99.00</a>
                             </div>
 
                         </div>
@@ -103,7 +103,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>Bella Toes</h3>
-                                <a href="shop-single.html">$165.00</a>
+                                <a href="#">Rs 165.00</a>
                             </div>
 
                         </div>
@@ -113,7 +113,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>Red Bellies</h3>
-                                <a href="shop-single.html">$225.00</a>
+                                <a href="#">Rs 225.00</a>
                             </div>
 
                         </div>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>(SRV) Sneakers</h3>
-                                <a href="shop-single.html">$169.00</a>
+                                <a href="#">Rs 169.00</a>
                             </div>
 
                         </div>
@@ -145,12 +145,12 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="shop-single.html">{{obj.name}}</a>
+                                        <a href="{% url 'shop-detail' obj.id %}">{{obj.name}}</a>
                                     </h4>
 
                                     <div class="product_price">
                                         <div class="grid-price">
-                                            <span class="money">${{obj.price|floatformat:2}}</span>
+                                            <span class="money">Rs {{obj.price|floatformat:2}}</span>
                                         </div>
                                     </div>
                                     <ul class="stars">
@@ -168,7 +168,7 @@
                     </div>
                     <div class="grid-img-right mt-4 text-right">
                         <span class="money">Flat 50% Off</span>
-                        <a href="shop-single.html" class="btn">Shop Now</a>
+                        <a href="#" class="btn">Shop Now</a>
                     </div>
                 </div>
             </div>

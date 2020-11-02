@@ -26,7 +26,7 @@
                             </div>
                             <div class="img-deal1 col-md-4">
                                 <h3>Shuberry Heels</h3>
-                                <a href="shop-single.html">Rs.180.00</a>
+                                <a href="#">Rs.180.00</a>
                             </div>
 
                         </div>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>Chikku Loafers</h3>
-                                <a href="shop-single.html">Rs.99.00</a>
+                                <a href="#">Rs.99.00</a>
                             </div>
 
                         </div>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>Bella Toes</h3>
-                                <a href="shop-single.html">Rs.165.00</a>
+                                <a href="#">Rs.165.00</a>
                             </div>
 
                         </div>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>Red Bellies</h3>
-                                <a href="shop-single.html">Rs.225.00</a>
+                                <a href="#">Rs.225.00</a>
                             </div>
 
                         </div>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="img-deal1 col-md-8">
                                 <h3>(SRV) Sneakers</h3>
-                                <a href="shop-single.html">Rs.169.00</a>
+                                <a href="#">Rs.169.00</a>
                             </div>
 
                         </div>
@@ -85,11 +85,8 @@
                             <h3>{{product.name}}</h3>
                             <h5>Rs. {{product.price}} <span>{{product.price|add:200}}</span></h5>
                             <div class="available mt-3">
-                                <form action="#" method="post" class="w3layouts-newsletter">
-                                    {% csrf_token %}
-                                    <button class="btn1">Buy Now</button>
-                                </form>
-                                <p>Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
+                                    <a href="{% url 'checkout' %}" class="btn1">Buy Now</a>
+                                <p style="padding-top: 10px;">Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
                             </div>
                             <div class="share-desc">
                                 <div class="share">
@@ -139,7 +136,7 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="shop-single.html">Suitable Lace Up </a>
+                                        <a href="#">Suitable Lace Up </a>
                                     </h4>
 
                                     <div class="product_price">
@@ -165,7 +162,7 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="shop-single.html">Black Flats</a>
+                                        <a href="#">Black Flats</a>
                                     </h4>
 
                                     <div class="product_price">
@@ -191,7 +188,7 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="shop-single.html">Elevator Shoes </a>
+                                        <a href="#">Elevator Shoes </a>
                                     </h4>
 
                                     <div class="product_price">
