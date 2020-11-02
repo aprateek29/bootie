@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Product, Contact, Newsletter
 from django.contrib import messages
 from .filters import ProductFilter
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index_view(request):
@@ -54,5 +54,10 @@ def shop_detail_view(request, id):
     product_list = Product.objects.all()[:5]
     return render(request, 'pages/shop-single.html', { 'product':product,'heading': 'Product Page', 'btn':True, 'product_list': product_list})
 
+@login_required
 def checkout(request):
+    if request.user.is_anonymous:
+        messages.success(request, 'You have to login first')
+
+
     return render(request, 'pages/checkout.html', {})
