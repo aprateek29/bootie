@@ -7,15 +7,15 @@
 
 <section class="ab-info-main py-5">
     <div class="container py-3">
-        <h3 class="tittle text-center"><span class="sub-tittle"></span> Sign In</h3>
+        <h3 class="tittle text-center"><span class="sub-tittle"></span> Login Page</h3>
         <div class="row contact-main-info mt-5">
-            <div class="col-md-6 contact-right-content">
+            <div class="col-md-6 contact-right-content mx-auto">
                 <form method="post">
                     {% csrf_token %}
                     <input type="text" name="username" placeholder="Username" required="required">
                     <input type="password" class="email" name="password" placeholder="Password" required="required">
                     <div class="read mt-3">
-                        <input type="submit" value="Login">
+                        <input style="display: block; margin: 0 auto;" type="submit" value="Login">
                     </div>
                 </form>
                 <br>
@@ -34,7 +34,9 @@
                 padding: 0.7em 2em;
                 padding-left: 1em;
                 padding-bottom: .8em;
-                box-shadow: 0 4px 8px #eee, 4px 0 8px #eee;" href="{% provider_login_url 'google' %}">
+                box-shadow: 0 4px 8px #eee, 4px 0 8px #eee;
+                display: block;
+                text-align: center;" href="{% provider_login_url 'google' %}">
                 <img src="{% static 'pages/images/google.png' %}" width="25px" height="25px" alt="">
                 &nbsp;Sign in with Google</a> 
             </div>
