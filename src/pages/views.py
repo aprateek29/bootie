@@ -56,8 +56,4 @@ def shop_detail_view(request, id):
 
 @login_required
 def checkout(request):
-    if request.user.is_anonymous:
-        messages.success(request, 'You have to login first')
-
-
-    return render(request, 'pages/checkout.html', {})
+    return render(request, 'pages/checkout.html', {'heading': 'Checkout Page'})
