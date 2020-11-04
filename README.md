@@ -14,3 +14,4 @@
 Just Fork The Repo!
 
 **Screenshots are available**
+https://drive.google.com/drive/folders/1PTajpSBqlkaiODntmSVuiwpR64At36x6?usp=sharing
