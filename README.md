@@ -1,2 +1,16 @@
-# Django-ecommerce-app
-This is a ecommerce app made with Django. Functionalities: Auth System, Search, Filter, CRUD and many more.
+# Bootie
+## The Ecommerce App
+
+*A Web App Made By Prateek Arora*
+
+**Key Features:**
+1. Email Login System
+2. Google Login
+3. Product Filter by Name, Price, Category
+4. Contact Page
+
+
+**Want To Add Some Features**
+Just Fork The Repo!
+
+**Screenshots are available**
