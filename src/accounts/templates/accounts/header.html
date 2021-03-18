@@ -1,47 +1,94 @@
 {% load active_link_tags %}
 
-    <!-- mian-content -->
-    <div class="" style="background-color: #148bff; height: 100px;" id="home">
-        <!-- header -->
-        <header class="header">
-            <div class="container-fluid px-lg-5">
-                <!-- nav -->
-                <nav class="py-4">
-                    <div id="logo">
-                        <h1> <a href="{% url 'index' %}"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a></h1>
-                    </div>
+<!-- mian-content -->
+<div class="" style="background-color: #ce091d; height: 100px" id="home">
+  <!-- header -->
+  <header class="header">
+    <div class="container-fluid px-lg-5">
+      <!-- nav -->
+      <nav class="py-4">
+        <div id="logo">
+          <h1>
+            <a href="{% url 'index' %}"
+              ><span class="fa fa-bold" aria-hidden="true"></span>ootie</a
+            >
+          </h1>
+        </div>
 
-                    <label for="drop" class="toggle">Menu</label>
-                    <input type="checkbox" id="drop" />
-                    <ul class="menu mt-2">
-                        <li><a href="{% url 'index' %}" class="{% active_link 'index' strict=True %}">Home</a></li>
-                        <li><a href="{% url 'about' %}" class="{% active_link 'about' %}">About</a></li>
-                        <li><a href="{% url 'shop' %}">Shop Now</a></li>
-                        <li><a href="{% url 'contact' %}" class="{% active_link 'contact' %}">Contact</a></li>
-                        {% if user.is_authenticated %}
-                        <li><a href="{% url 'logout' %}" class="{% active_link 'logout' %}">Logout</a></li>
-                        {% else %}
-                        <li><a href="{% url 'signup' %}" class="{% active_link 'signup' %}">Sign Up</a></li>
-                        <li><a href="{% url 'login' %}" class="{% active_link 'login' %}">Login</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-                <!-- //nav -->
-            </div>
-        </header>
-        <!-- //header -->
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li style="font-family: 'Lato', sans-serif; background-color: #007bff; letter-spacing: 2px; font-weight: 400; text-transform: uppercase; margin: 0 auto; width: fit-content; list-style: none; padding: 5px 10px; color: #fff; box-shadow: 0 4px 8px #333, 4px 0 8px #007bff;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu mt-2">
+          <li>
+            <a
+              href="{% url 'index' %}"
+              class="{% active_link 'index' strict=True %}"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'about' %}" class="{% active_link 'about' %}"
+              >About</a
+            >
+          </li>
+          <li><a href="{% url 'shop' %}">Shop Now</a></li>
+          <li>
+            <a href="{% url 'contact' %}" class="{% active_link 'contact' %}"
+              >Contact</a
+            >
+          </li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'logout' %}" class="{% active_link 'logout' %}"
+              >Logout</a
+            >
+          </li>
+          {% else %}
+          <li>
+            <a href="{% url 'signup' %}" class="{% active_link 'signup' %}"
+              >Sign Up</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'login' %}" class="{% active_link 'login' %}"
+              >Login</a
+            >
+          </li>
+          {% endif %}
         </ul>
-        {% endif %}
-
-
-        <!--/banner-->
-        
-        <!--// banner-inner -->
-
+      </nav>
+      <!-- //nav -->
     </div>
-    <!--//main-content-->
+  </header>
+  <!-- //header -->
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li
+      style="
+        font-family: 'Lato', sans-serif;
+        background-color: white;
+        letter-spacing: 2px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 0 auto;
+        width: fit-content;
+        list-style: none;
+        padding: 5px 10px;
+        color: red;
+        border: 1px solid red;
+      "
+      {%
+      if
+      message.tags
+      %}
+      class="{{ message.tags }}"
+      {%
+      endif
+      %}
+    >
+      {{ message }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>

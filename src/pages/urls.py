@@ -11,5 +11,7 @@ urlpatterns = [
     path('single/', views.single_view, name='single'),
     url(r'shop/$', views.shop_list_view, name='shop'),
     path('shop/<id>', views.shop_detail_view, name='shop-detail'),
-    path('checkout/', views.checkout, name='checkout'),
+    path('checkout/<int:id>', views.checkout, name='checkout'),
+    path('charge/<int:id>', views.charge, name='charge'),
+    path('success/', views.successMsg, name='success'),
 ]

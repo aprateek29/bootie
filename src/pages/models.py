@@ -5,7 +5,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='photos/')
     price = models.IntegerField()
     rating = models.IntegerField()
-    tags = models.ManyToManyField('Tag')
+    tags = models.ManyToManyField('Tag', related_name='tags')
 
     @property
     def get_rating(self):

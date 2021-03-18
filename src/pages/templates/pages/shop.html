@@ -19,7 +19,7 @@
 
                     <div class="search-bar w3layouts-newsletter">
                         <h3 class="sear-head">Search Here..</h3>
-                        <form action="" method="GET" class="d-flex">
+                        <form action="." method="GET" class="d-flex">
                         <button class="btn1">Apply Filters</button>
                         <input type="search" placeholder="Product name..." name="name" class="form-control">
                     </div>
@@ -51,23 +51,23 @@
                         <h3 class="sear-head">Price</h3>
                         <ul class="w3layouts-box-list">
                             <li>
-                                <input name='price' value='price' type="radio" class="checked">
+                                <input name='price' value='200' type="radio" class="checked">
                                 <span class="span">200 or Less</span>
                             </li>
                             <li>
-                                <input name='price' value='price' type="radio" class="checked">
+                                <input name='price' value='400' type="radio" class="checked">
                                 <span class="span">400 or Less</span>
                             </li>
                             <li>
-                                <input name='price' value='price' type="radio" class="checked">
+                                <input name='price' value='600' type="radio" class="checked">
                                 <span class="span">600 or Less</span>
                             </li>
                             <li>
-                                <input name='price' value='price' type="radio" class="checked">
+                                <input name='price' value='800' type="radio" class="checked">
                                 <span class="span">800 or Less</span>
                             </li>
                             <li>
-                                <input name='price' value='price' type="radio" class="checked">
+                                <input name='price' value='1000' type="radio" class="checked">
                                 <span class="span">1000 or Less</span>
                             </li>
                         </ul>
@@ -79,9 +79,19 @@
                 <!-- //product left -->
                 <!-- product right -->
                 <div class="left-ads-display col-lg-8" id='go'>
+                        <small>{{filtered_products}} out of {{total_products}} Products<small/>
+                        <br>
+                        {% if filter_capsules %}
+                        <span style="font-size: 1.2em; font-weight: 700">Filters: <span>
+                        {% for obj in filter_capsules %}
+                        <span style="font-size: 1.2em" class="badge badge-secondary">{{obj}}</span>&nbsp;
+                        {% endfor %}
+                        <a href={% url 'shop' %} style="font-size: 1.2em" class="btn badge badge-warning">Clear Filters</a>&nbsp;
+                        <br >
+                        {% endif %}
+                        <br >
                     <div class="row">
-
-                        {% for obj in filter.qs %}
+                        {% for obj in filter %}
                         <div class="col-md-4 product-men">
                             <div class="product-shoe-info shoe text-center">
                                 <div class="men-thumb-item">
@@ -90,7 +100,7 @@
                                 </div>
                                 <div class="item-info-product">
                                     <h4>
-                                        <a href="{% url 'shop-detail' obj.id %}">{{obj.name}}</a>
+                                        <a href="{% url 'shop-detail' obj.id %}"><u>{{obj.name}}</u></a>
                                     </h4>
 
                                     <div class="product_price">

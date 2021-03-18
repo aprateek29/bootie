@@ -1,6 +1,180 @@
-{% extends 'pages/base.html' %}
-{% load static %}
+{% extends 'pages/base.html' %} {% load static %} {% block content %}
 
-{% block content %}
-<h1>Checkout Page</h1>
+<style type="text/css">
+  .StripeElement {
+    box-sizing: border-box;
+
+    height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+  .input_field {
+    color: #32325d;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    width: 50%;
+    min-width: 300px;
+  }
+</style>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<h1 style="text-align: center; margin-top: 16px">Submit Payment</h1>
+
+<div
+  style="
+    max-width: 500px;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding-left: 16px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+    box-shadow: 0px 0px 8px #aaa;
+  "
+>
+  <form action="{% url 'charge' id %}" method="post" id="payment-form">
+    {% csrf_token %}
+    <div>
+      <label style="width: 80px; font-weight: bold" for="email">Email: </label>
+      <input
+        class="input_field"
+        required
+        type="email"
+        name="email"
+        placeholder="Email"
+        id="email"
+      />
+    </div>
+    <br />
+    <div>
+      <label style="width: 80px; font-weight: bold" for="username"
+        >Username:
+      </label>
+      <input
+        class="input_field"
+        required
+        type="text"
+        name="nickname"
+        placeholder="Username"
+        id="username"
+      />
+    </div>
+    <br />
+
+    <div>
+      <label for="card-element"> Credit or debit card </label>
+      <div id="card-element"></div>
+    </div>
+
+    <div id="card-errors" role="alert"></div>
+    <br />
+    <div style="width: fit-content; margin: 0 auto; cursor: pointer">
+      <input
+        class="myButton"
+        style="
+          width: 50%;
+          max-width: 300px;
+          min-width: 200px;
+          background-color: white;
+          border: none;
+          border: 1px solid red;
+          color: red;
+          cursor: pointer;
+        "
+        type="submit"
+        value="Submit Payment"
+        name=""
+      />
+    </div>
+  </form>
+</div>
+<script>
+  var stripe = Stripe(
+    "pk_test_51IWG0lBCYGTfkEONZZDVanHz1XHZ5WnDYVvBxT6TZQOMUFmhv5sAMpIg6NHRbju0mm1XuLfsyiz8lVur8rfZlz3800DSZVAEGc"
+  );
+
+  var elements = stripe.elements();
+
+  var style = {
+    base: {
+      color: "#32325d",
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: "antialiased",
+      fontSize: "16px",
+      "::placeholder": {
+        color: "#999",
+      },
+    },
+    invalid: {
+      color: "#fa755a",
+      iconColor: "#fa755a",
+    },
+  };
+
+  // Create an instance of the card Element.
+  var card = elements.create("card", { style: style });
+
+  // Add an instance of the card Element into the `card-element` <div>.
+  card.mount("#card-element");
+
+  // Handle real-time validation errors from the card Element.
+  card.addEventListener("change", function (event) {
+    var displayError = document.getElementById("card-errors");
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = "";
+    }
+  });
+
+  var form = document.getElementById("payment-form");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    stripe.createToken(card).then(function (result) {
+      if (result.error) {
+        var errorElement = document.getElementById("card-errors");
+        errorElement.textContent = result.error.message;
+      } else {
+        stripeTokenHandler(result.token);
+      }
+    });
+  });
+
+  function stripeTokenHandler(token) {
+    var form = document.getElementById("payment-form");
+    var hiddenInput = document.createElement("input");
+    hiddenInput.setAttribute("type", "hidden");
+    hiddenInput.setAttribute("name", "stripeToken");
+    hiddenInput.setAttribute("value", token.id);
+    form.appendChild(hiddenInput);
+
+    form.submit();
+  }
+</script>
 {% endblock %}
