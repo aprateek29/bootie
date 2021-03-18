@@ -8,7 +8,10 @@
 2. Google Login
 3. Product Filter by Name, Price, Category
 4. Contact Page
-5. Payments ( TODO )
+5. Payments by Stripe
+6. Dynamic Web Pages
+7. Cool Design
+8. Aws file storage (TODO)
 
 
 **Want To Add Some Features**
@@ -16,7 +19,7 @@ Just Fork The Repo!
 
 
 **Screenshots are available**
-https://drive.google.com/drive/folders/1PTajpSBqlkaiODntmSVuiwpR64At36x6?usp=sharing
+(will update soon)
 
 
 **New To Django**  
@@ -24,7 +27,7 @@ https://drive.google.com/drive/folders/1PTajpSBqlkaiODntmSVuiwpR64At36x6?usp=sha
 2- Download files in environment  
 3- Run `pip install -r requirements.txt` in any command line interface  
 4- Run `py manage.py runserver`  
-5- Open 127.0.0.1:8000 in browser  
+5- Open http://localhost:8000 in browser  
 
 
 ***
