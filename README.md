@@ -1,7 +1,7 @@
 # Bootie
 ## The Ecommerce App
 
-*A Web App Made By Prateek Arora*
+*A Web Application developed By Prateek Arora*
 
 **Key Features:**
 1. Email Login System
